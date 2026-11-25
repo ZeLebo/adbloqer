@@ -9,8 +9,8 @@ const root = path.join(__dirname, "..");
 for (const file of ["player.js", "tests/browser.js"]) {
   new vm.Script(fs.readFileSync(path.join(root, file), "utf8"), {filename: file});
 }
-const binary = process.env.ADBLOQER_BROWSER || "/Applications/Zen.app/Contents/MacOS/zen";
-if (!fs.existsSync(binary)) {
+const binary = process.env.ADBLOQER_BROWSER;
+if (!binary) {
   console.error("Set ADBLOQER_BROWSER to a Firefox/Zen executable.");
   process.exit(1);
 }
