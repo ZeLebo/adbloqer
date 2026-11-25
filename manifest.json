@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Adbloqer",
+  "version": "1.0.0",
+  "description": "Отключает рекламный модуль поддерживаемого видеоплеера на HTTPS-сайтах независимо от домена.",
+  "permissions": ["webRequest", "webRequestBlocking", "https://*/*"],
+  "background": { "scripts": ["player.js", "background.js"] },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "adbloqer@local.invalid",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  }
+}
